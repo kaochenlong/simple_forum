@@ -6,13 +6,11 @@ class PostsController < ApplicationController
   end
 
   def show
+    @comments = @post.comments.order(id: :desc)
   end
 
   def new
     @post = Post.new
-  end
-
-  def edit
   end
 
   def create
@@ -25,9 +23,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
     if @post.update(post_params)
-      redirect_to posts_path, notice: "文章已更新"
+      redirect_to @post, notice: "文章已更新"
     else
       render :edit, status: :unprocessable_entity
     end

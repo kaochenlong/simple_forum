@@ -1,0 +1,7 @@
+<%= turbo_stream.prepend dom_id(@post, :comment) do %>
+  <%= render @comment %>
+<% end %>
+
+<%= turbo_stream.update "new_comment" do %>
+  <%= link_to "新增留言", new_post_comment_path(@post), class: 'px-3 py-2 bg-gray-200 rounded' %>
+<% end %>

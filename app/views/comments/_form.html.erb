@@ -1,0 +1,7 @@
+<%= form_with(model: [post, comment]) do |form| %>
+  <div>
+    <%= form.text_area :content %>
+  </div>
+  <%= link_to "Cancel", :back, class: 'px-3 py-2 bg-gray-100 rounded-sm' %>
+  <%= form.submit class: 'px-3 py-2 bg-pink-100 rounded-sm' %>
+<% end %>

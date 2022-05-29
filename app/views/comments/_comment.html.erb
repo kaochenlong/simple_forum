@@ -1,0 +1,7 @@
+<%= turbo_frame_tag comment do %>
+  <div class="px-2 py-2 my-3 text-gray-800 rounded shadow bg-gray-50">
+    <%= link_to "編輯", edit_comment_path(comment) %> |
+    <%= link_to "刪除", comment, data: { turbo_method: "delete", turbo_confirm: "刪除留言？" } %>
+    <%= comment.content %>
+  </div>
+<% end %>
